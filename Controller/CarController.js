@@ -35,27 +35,27 @@ module.exports = {
   },
 
   async update(req, res) {
-    const { userId } = req.params;
+    const { carsId } = req.params;
     const { name, licensePlate } = req.body;
 
-    if (!userId) {
+    if (!carsId) {
       return res.json("User don't exists");
     }
 
     const car = await Cars.update(
       { name, licensePlate },
-      { where: { id: userId } }
+      { where: { id: carsId } }
     );
 
     return res.json({ message: "Your car updated success", car });
   },
 
   async delete(req, res) {
-    const { userId } = req.params;
+    const { carsId } = req.params;
 
-    const car = await Cars.findByPk(userId);
+    const car = await Cars.findByPk(carsId);
 
-    if (!userId) {
+    if (!carsId) {
       return res.json("User don't exists");
     }
 

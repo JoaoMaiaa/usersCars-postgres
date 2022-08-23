@@ -12,6 +12,6 @@ routes.delete("/users/:userId/", UserController.delete);
 routes.post("/users/:userId/cars", CarController.store);
 routes.get("/users/:userId/cars", CarController.index);
 routes.put("/users/:userId/cars", CarController.update);
-routes.delete("/users/:userId/cars", CarController.delete);
+routes.delete("/users/:carsId/cars", CarController.delete);
 
 module.exports = routes;
